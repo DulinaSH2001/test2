@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fly Master</title>
+
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/aboutus.css">
+    <link rel="stylesheet" href="CSS/login.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            const fromSelect = document.querySelector('select[name="from"]');
+            const toSelect = document.querySelector('select[name="to"]');
+            
+            // Add an event listener to the "To" select element
+            toSelect.addEventListener('change', function () {
+                if (fromSelect.value === toSelect.value) {
+                    alert("From and To countries cannot be the same.");
+                    // You can also prevent form submission here if needed
+                }
+            });
+        });
+
+        
+        document.addEventListener('DOMContentLoaded', function () {
+        const navLinks = document.querySelectorAll('.nav a');
+        const currentURL = window.location.href;
+
+        // Function to set the "active" class on the correct link
+        function setActiveLink() {
+            navLinks.forEach(link => {
+                const linkURL = link.href;
+
+                if (currentURL === linkURL) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        // Call setActiveLink when the page loads and after clicking a link
+        setActiveLink();
+
+        // Add a click event listener to each navigation link
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (event) {
+                // Remove the "active" class from all links
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                // Add the "active" class to the clicked link
+                link.classList.add('active');
+            });
+        });
+    });
+
+                // Get the modal
+        var modal = document.getElementById('id01');
+        var modal = document.getElementById('id02');
+        
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        
+
+    </script>
+  
+        
+</head>
+<body>
+    <div class="header">
+        <div class="left">
+            <a href="index.php"><img src="images/logo.png" alt="logo" class="logo"></a>
+            <h6 class="title">Fly Master</h6>
+            <a href="#" class="signprofile" onclick="document.getElementById('id01').style.display='block'"><img src="images/profile.jpg" alt="logo" class="profile"></a>
+        </div>
+
+        <div class="topnav" id="myTopnav">
+         <!--   <input type="text" placeholder="Search.."><a href="#"><i class="fa fa-fw fa-search"></i></a> -->
+            <a href="#news">Support</a>
+            <a href="#" class="login-button" id="signin" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign up or Login</a>
+            </div>
+          
+          <div class="nav" id="nav">
+            <a href="index.php" class="active">Home</a>
+            <a href="#news" >Ticket Booking</a>
+            <a href="#contact">Contact Us</a>
+            <a href="aboutus.php">About Us</a>
+         </div>
+    </div>
+
+    <div class="section">
